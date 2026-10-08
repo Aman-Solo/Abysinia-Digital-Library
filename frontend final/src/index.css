@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* Base body styles with proper light/dark mode colors */
+    body {
+        @apply bg-stone-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-200;
+        font-family: 'Poppins', system-ui, sans-serif;
+    }
+
+    /* Ensure all text elements have proper contrast */
+    h1, h2, h3, h4, h5, h6 {
+        @apply text-slate-900 dark:text-white;
+    }
+
+    p {
+        @apply text-slate-700 dark:text-slate-300;
+    }
+}
+
+@layer components {
+    /* Card with proper light/dark mode contrast */
+    .card-heritage {
+        @apply bg-white dark:bg-slate-800/70 rounded-2xl shadow-lg border border-stone-200 dark:border-slate-700/50 p-8 backdrop-blur-md transition-all duration-300 hover:shadow-xl;
+    }
+
+    /* Buttons with proper visibility */
+    .btn-heritage {
+        @apply px-6 py-3 rounded-xl font-bold transition-all duration-200 uppercase tracking-wide text-sm bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white shadow-lg hover:shadow-xl active:scale-95;
+    }
+
+    /* Inputs with proper light/dark mode contrast */
+    .input-heritage {
+        @apply w-full px-5 py-3.5 rounded-xl border border-stone-300 dark:border-slate-600 bg-white dark:bg-slate-800/50 text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 transition-all outline-none shadow-sm;
+    }
+
+    /* Glass panel with proper contrast */
+    .glass-panel {
+        @apply bg-white/95 dark:bg-slate-900/80 backdrop-blur-xl border border-stone-200 dark:border-slate-700/30 shadow-xl;
+    }
+
+    /* Light mode specific text classes for better readability */
+    .text-readable {
+        @apply text-slate-800 dark:text-slate-200;
+    }
+
+    .text-readable-muted {
+        @apply text-slate-600 dark:text-slate-400;
+    }
+
+    .text-readable-strong {
+        @apply text-slate-900 dark:text-white;
+    }
+
+    /* Section backgrounds with proper contrast */
+    .section-bg {
+        @apply bg-white dark:bg-slate-800/60;
+    }
+
+    .section-bg-alt {
+        @apply bg-stone-50 dark:bg-slate-900/40;
+    }
+
+    /* Border colors for light/dark mode */
+    .border-readable {
+        @apply border-stone-200 dark:border-slate-700;
+    }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-slate-600 rounded-full;
+}
+
+/* Reset body top position (Google Translate fix) */
+body {
+    top: 0px !important;
+}
+
+/* Hide Google Translate elements */
+.goog-te-banner-frame,
+.goog-te-gadget-icon,
+#goog-gt-vt,
+.VIpgJd-yAWNEb-hvhgNd,
+div[class*="VIpgJd"],
+iframe[class*="VIpgJd"],
+body[class*="VIpgJd"],
+#goog-gt-votingForm,
+#goog-gt-votingHiddenPane,
+.skiptranslate iframe {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.goog-te-gadget-simple {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* Read Aloud Button */
+.read-aloud-btn {
+    @apply fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 text-white shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center cursor-pointer;
+    animation: pulse-glow 2s infinite;
+}
+
+.read-aloud-btn:hover {
+    animation: none;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 20px 10px rgba(217, 119, 6, 0);
+    }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
