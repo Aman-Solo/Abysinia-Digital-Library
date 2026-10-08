@@ -1,0 +1,2 @@
+USERS_COLS: id,username,email,password,role,security_question_1,security_answer_1,security_question_2,security_answer_2,security_question_3,security_answer_3,bio,age
+ITEMS_COLS: id,title,description,file_path,category,rejection_reason,user_id,status,file_type,created_at
